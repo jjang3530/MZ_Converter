@@ -1,0 +1,91 @@
+<div class="content" role="main">
+  
+    <!-- TITLE Card -->
+    <div class="card highlight-card card-small">
+      <h3>Convert user select Currency to CAD</h3>
+    </div>
+  
+    <!-- CAD TO ANOTHER CURRENCY -->
+    <h2>{{selection.value}} AMOUNT</h2>
+    <div class="amount">
+      <input
+        class="input"
+        type="number"
+        name="money"
+        #money
+        autofocus
+        autocomplete="off"
+      >
+    </div>
+  
+    <h2>Date of Currency Rate</h2>
+    <select class='select-option' [(ngModel)]="selectedDate">
+      <option class='option' 
+      *ngFor='let option of dateRange'
+      >{{option}}</option>
+    </select>
+  
+    <p>Select a Currency what you want to exchange</p>
+  
+    <!--CURRENCY BUTTONS TO CONVERT-->
+    <input type="hidden" #selection>
+  
+    <div class="card-container">
+      <div class="card card-small" (click)="selection.value = 'USD'; convertor('USD', money.value);" tabindex="0">
+        <span>USD</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'EUR'; convertor('EUR', money.value);" tabindex="0">
+        <span>EUR</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'JPY'; convertor('JPY', money.value);" tabindex="0">
+        <span>JPY</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'GBP'; convertor('GBP', money.value);" tabindex="0">
+        <span>GBP</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'AUD'; convertor('AUD', money.value);" tabindex="0">
+        <span>AUD</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'CHF'; convertor('CHF', money.value);" tabindex="0">
+        <span>CHF</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'CNY'; convertor('CNY', money.value);" tabindex="0">
+        <span>CNY</span>
+      </div>
+  
+      <div class="card card-small" (click)="selection.value = 'HKD'; convertor('HKD', money.value);" tabindex="0">
+        <span>HKD</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'MXN'; convertor('MXN', money.value);" tabindex="0">
+        <span>MXN</span>
+      </div>
+      
+      <div class="card card-small" (click)="selection.value = 'INR'; convertor('INR', money.value);" tabindex="0">
+        <span>INR</span>
+      </div>
+      
+    </div>
+  
+    <!-- exchangeRate Result -->
+    <div class="exchangeRate" [ngSwitch]="selection.value">
+        <pre *ngSwitchDefault></pre>
+        <pre *ngSwitchCase="'USD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'EUR'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'JPY'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'GBP'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'AUD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'CHF'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'CNY'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'HKD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'MXN'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'INR'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+    </div>
+  
+  

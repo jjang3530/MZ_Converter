@@ -16,10 +16,19 @@
     margin: 8px 0;
   }
 
-  .spacer {
-    flex: 0.1;
+  p {
+    margin: 0;
   }
 
+  .spacer {
+    flex: 1;
+  }
+
+  .amount{
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: bold;
+  }
   .toolbar {
     height: 60px;
     margin: -8px;
@@ -34,6 +43,23 @@
     margin: 0 16px;
   }
 
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -43,6 +69,8 @@
 
   .card {
     border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
@@ -55,10 +83,13 @@
     line-height: 24px;
   }
 
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
   .card.card-small {
     height: 12px;
-    width: 320px;
-    font-size: x-large;
+    width: 120px;
   }
 
   .card-container .card:not(.highlight-card) {
@@ -74,15 +105,73 @@
     fill: rgb(105, 103, 103);
   }
 
+  .card.highlight-card {
+    background-color: #FF4C00;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
   a,
   a:visited,
   a:hover {
-    color: white;
+    color: #1976d2;
     text-decoration: none;
   }
 
   a:hover {
     color: #125699;
+  }
+
+
+  .exchangeRate {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .exchangeRate::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .exchangeRate pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+    font-size: x-large;
+  }
+
+  .input{
+    width: 180px;
+    height: 35px;
+    font-size: large;
+  }
+
+  .select-option {
+    width: 130px;
+    height: 35px;
+    font-size: large;
+    margin-bottom: 10px;
   }
 
   /* Responsive Styles */
@@ -100,5 +189,13 @@
 
     .card.highlight-card span {
       margin-left: 72px;
+    }
+
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
     }
   }
