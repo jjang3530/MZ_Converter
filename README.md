@@ -12,7 +12,8 @@ MZ Currency Converter by Jay Jang
 
 ## Framework
 
-Web-application in Angular / Used Angular CLI v9.0.1
+Web-application in Angular
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
 
 ### Usage
@@ -23,4 +24,6 @@ Run these commands in the terminal to run the app on your local environment
 
     npm install
 
-    npm start
+    ng serve -o
+
+	Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`
