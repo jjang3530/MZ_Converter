@@ -76,16 +76,16 @@
     <!-- exchangeRate Result -->
     <div class="exchangeRate" [ngSwitch]="selection.value">
         <pre *ngSwitchDefault></pre>
-        <pre *ngSwitchCase="'USD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'EUR'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'JPY'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'GBP'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'AUD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'CHF'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'CNY'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'HKD'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'MXN'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
-        <pre *ngSwitchCase="'INR'">{{money.value}} {{selection.value}} = {{calValue | number: '1.0-4'}} CAD <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'USD'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'EUR'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'JPY'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'GBP'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'AUD'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'CHF'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'CNY'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'HKD'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'MXN'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
+        <pre *ngSwitchCase="'INR'">{{money.value}} CAD = {{calValue | number: '1.0-4'}} {{selection.value}} <br>{{calDate}} | Exchange Rate: {{exRate | number: '1.0-4'}}</pre>
     </div>
   
   
