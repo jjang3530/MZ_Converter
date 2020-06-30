@@ -6,13 +6,14 @@ MZ Currency Converter by Jay Jang
 
 * Convert between other currencies to CAD, and from CAD to other currencies.
 * Use the daily average exchange rate published by the Bank of Canada.
-* User available to select date of the conversion within 5 business days.
+* User available to select date of the conversion.
 * Available foreign currencies: USD, EUR, JPY, GBP, AUD, CHF, CNY, HKD, MXN, INR.
 
 
 ## Framework
 
 Web-application in Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
 

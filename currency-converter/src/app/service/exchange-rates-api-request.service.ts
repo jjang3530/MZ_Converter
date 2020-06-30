@@ -7,7 +7,7 @@ import {currencyExchangeRate} from '../model/currency-exchange-rate.model'
 })
 export class ExchangeRatesApiRequestService {
 
-  private baseUrl = 'https://www.bankofcanada.ca/valet/observations/group/FX_RATES_DAILY/json?recent=5';
+  private baseUrl = 'https://www.bankofcanada.ca/valet/observations/group/FX_RATES_DAILY/json'; //'https://www.bankofcanada.ca/valet/observations/group/FX_RATES_DAILY/json?recent=5';
 
   currencies = ['USD','EUR','JPY','GBP','AUD','CHF','CNY','HKD','MXN','INR'];
   
@@ -16,7 +16,7 @@ export class ExchangeRatesApiRequestService {
   getData(){
     return new Promise(resolve =>{
       this.http.get(this.baseUrl).subscribe(data =>{
-        data = data["observations"].splice(5,5);
+        data = data["observations"]; //data = data["observations"].splice(5,5); within 5days
         resolve(data);
         console.log(data);     
       },
@@ -31,6 +31,7 @@ export class ExchangeRatesApiRequestService {
     for(var i=0; i < data.length; i++){
       dateRange.push(data[i].d);
     }
+    dateRange = dateRange.reverse();
     console.log(dateRange);
     return dateRange;
   }
