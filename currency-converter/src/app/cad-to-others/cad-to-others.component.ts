@@ -26,9 +26,9 @@ export class CadToOthersComponent implements OnInit {
     });
   }
 
-  convertor(str : string, amt : any){
-    var dt = this.selectedDate;
-    var cryRate = this.rates.find(c => c.currency == str && c.date == dt);
+  convertor(str : string, amt : number){
+    let dt = this.selectedDate;
+    let cryRate = this.rates.find(c => c.currency == str && c.date == dt);
     this.calDate = dt;
     this.exRate = 1/cryRate.rate;
     this.calValue = amt * this.exRate;

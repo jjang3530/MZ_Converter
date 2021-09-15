@@ -18,7 +18,7 @@ export class ExchangeRatesApiRequestService {
       this.http.get(this.baseUrl).subscribe(data =>{
         data = data["observations"]; //data = data["observations"].splice(5,5); within 5days
         resolve(data);
-        console.log(data);     
+        //console.log(data);     
       },
         err => {
           console.log(err);
@@ -27,23 +27,23 @@ export class ExchangeRatesApiRequestService {
   }
 
   getDateRange(data : any){
-    var dateRange: Date[] = [];
-    for(var i=0; i < data.length; i++){
+    let dateRange: Date[] = [];
+    for(let i=0; i < data.length; i++){
       dateRange.push(data[i].d);
     }
     dateRange = dateRange.reverse();
-    console.log(dateRange);
+    //console.log(dateRange);
     return dateRange;
   }
 
   getRates(data: any){
-    var rates: currencyExchangeRate[] = [];
-    for(var i = 0; i < this.currencies.length; i++){
-      var cryStr = 'FX' + this.currencies[i] + 'CAD'; // FXUSDCAD
-      var cry = this.currencies[i];
-      for(var j=0; j < data.length; j++){
-        var changeDate = data[j].d;
-        var rt = data[j][cryStr].v;
+    let rates: currencyExchangeRate[] = [];
+    for(let i = 0; i < this.currencies.length; i++){
+      let cryStr = 'FX' + this.currencies[i] + 'CAD'; // FXUSDCAD
+      let cry = this.currencies[i];
+      for(let j=0; j < data.length; j++){
+        let changeDate = data[j].d;
+        let rt = data[j][cryStr].v;
         rates.push({
           date: changeDate,
           currency : cry,
@@ -51,7 +51,7 @@ export class ExchangeRatesApiRequestService {
         });
       }
     }
-    console.log(rates);
+    //console.log(rates);
     return rates;
   }
 }
